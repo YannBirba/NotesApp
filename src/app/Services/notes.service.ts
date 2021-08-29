@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from '../models/note';
@@ -33,6 +33,6 @@ export class NotesService {
   search(title: string): Observable<Note[]> {
     console.log(title);
     
-    return this.http.get<Note[]>(`${baseUrl}?title=${title}`);
+    return this.http.get<Note[]>(`${baseUrl}-search?title=${title}`);
   }
 }

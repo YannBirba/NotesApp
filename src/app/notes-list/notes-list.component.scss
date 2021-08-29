@@ -20,6 +20,7 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     flex: 0 0 200px;
+    word-break: break-all;
 
     h3 {
       font-size: 18px;
@@ -34,7 +35,41 @@ h1 {
   }
 }
 
-.search{
-    display: flex;
-    justify-content: center;
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .search {
+    margin: auto;
+  }
+
+  .results {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #fff;
+    outline: 2px solid grey;
+    scrollbar-width: thin;
+
+    ul {
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        font-weight: 700;
+
+        &:hover {
+          color: cadetblue;
+        }
+      }
+    }
+  }
 }

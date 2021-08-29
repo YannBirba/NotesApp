@@ -8,10 +8,9 @@
     <input type="submit" (ngModelChange)="retrieveResults()" name="searchInput" [(ngModel)]="searchInput" type="search"
       placeholder="Chercher une note ...">
   </section>
-  <div class="results">
-    <ul *ngIf="searchInput">
-      <li *ngFor="let result of     
-  results">
+  <div class="results" *ngIf="searchInput">
+    <ul>
+      <li *ngFor="let result of results" style="cursor: pointer;" routerLink="/note/{{result.id}}">
         {{result.title}}
       </li>
     </ul>
