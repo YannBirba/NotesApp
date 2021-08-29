@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from '../models/note';
 import { NotesService } from '../Services/notes.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-note',
@@ -15,11 +15,12 @@ export class AddNoteComponent {
     content: '',
   };
   submitted : boolean = false;
-  message : string = '';
+  message: string = '';
+  public isFormValid: boolean = false;
 
    constructor(private notesService: NotesService) { }
 
-saveNote(): void {
+   onSubmit(form: NgForm) {
     const data = {
       title: this.currentNote.title,
       content: this.currentNote.content

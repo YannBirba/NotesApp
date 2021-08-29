@@ -48,7 +48,7 @@ h1 {
 
   .results {
     position: absolute;
-    top: 25px;
+    top: 29px;
     left: 50%;
     transform: translateX(-50%);
     max-height: 500px;
@@ -57,7 +57,7 @@ h1 {
     background: #fff;
     outline: 2px solid grey;
     scrollbar-width: thin;
-
+    min-width: 341px;
     ul {
       li {
         display: flex;

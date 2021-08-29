@@ -1,0 +1,42 @@
+h4 {
+    text-align: center;
+    font-weight: 700;
+    margin: 25px 0;
+    font-size: 25px;
+  }
+  
+  form {
+    outline: 2px solid grey;
+    max-width: 250px;
+    margin: auto;
+    padding: 2.5% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+  
+    textarea {
+      min-height: 150px;
+      font-family: 'Raleway',sans-serif;
+    }
+  
+    textarea,
+    input {
+      width: 100%;
+    }
+  
+    label {
+      color: cadetblue;
+      font-weight: 700;
+    }
+  }
+p{
+    text-align: center;
+    margin-top: 25px;
+    font-style: italic;
+    strong{
+        font-weight: 700;
+        color: cadetblue;
+    }
+}

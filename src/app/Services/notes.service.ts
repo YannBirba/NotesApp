@@ -31,8 +31,6 @@ export class NotesService {
   }
 
   search(title: string): Observable<Note[]> {
-    console.log(title);
-    
     return this.http.get<Note[]>(`${baseUrl}-search?title=${title}`);
   }
 }

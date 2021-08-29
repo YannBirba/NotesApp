@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Note } from '../models/note';
 import { NotesService } from '../Services/notes.service';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notes-list',
@@ -13,7 +14,7 @@ export class NotesListComponent implements OnInit {
   results: Note[] = [];
   public searchInput: string = '';
   changeCount: number = 0;
-  constructor(private notesService: NotesService) {}
+  constructor(private notesService: NotesService, private router: Router) {}
 
   ngOnInit(): void {
     this.retrieveNotes();
@@ -28,16 +29,17 @@ export class NotesListComponent implements OnInit {
       }
     );
   }
-  retrieveResults(): void{
-    console.log(this.searchInput);
+  retrieveResults(input : any): void{
+    this.results = [];
+    this.searchInput = input;
     if (this.searchInput != null || this.searchInput != '') {
       this.notesService.search(this.searchInput).subscribe(
-        data => {
+        (data) => {
           let dataTab: any = data;
           this.results = dataTab["data"];
-          console.log(dataTab);
+          
         },
-        error => {
+        (error) => {
           console.log(error);
         }
       );

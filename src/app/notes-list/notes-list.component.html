@@ -5,10 +5,10 @@
 <div class="search-container">
   <section class="search">
     <button routerLink="/add-note">Ajouter une note</button>
-    <input type="submit" (ngModelChange)="retrieveResults()" name="searchInput" [(ngModel)]="searchInput" type="search"
+    <input type="submit" (ngModelChange)="retrieveResults($event)" name="searchInput" [(ngModel)]="searchInput" type="search"
       placeholder="Chercher une note ...">
   </section>
-  <div class="results" *ngIf="searchInput">
+  <div class="results" *ngIf="searchInput && results.length > 0 ">
     <ul>
       <li *ngFor="let result of results" style="cursor: pointer;" routerLink="/note/{{result.id}}">
         {{result.title}}
