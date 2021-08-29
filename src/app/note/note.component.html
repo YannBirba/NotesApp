@@ -1,0 +1,36 @@
+<div>
+    <div *ngIf="currentNote.title">
+      <h4>Note {{currentNote.id}}</h4>
+      <form>
+        <label for="title">Titre</label>
+        <div>
+
+          <input
+            type="text"
+            id="title"
+            [(ngModel)]="currentNote.title"
+            name="title"
+          />
+        </div>
+        <label for="content">Contenu</label>
+        <div>
+
+          <textarea
+            type="text"
+            id="content"
+            [(ngModel)]="currentNote.content"
+            name="content"
+          ></textarea>
+        </div>
+        <button (click)="deleteNote()">Delete</button>
+  
+        <button type="submit" (click)="updateNote()">Update</button>
+      </form>
+
+    </div>
+    <div *ngIf="!currentNote.title ">
+      <p>Cette note est inaccessible ...</p>
+    </div>
+  </div>
+<p><strong>{{ message }}</strong></p>
+  

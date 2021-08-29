@@ -1,0 +1,34 @@
+<div>
+    <div *ngIf="!submitted">
+      <h4>Nouvelle note</h4>
+      <form>
+        <label for="title">Titre</label>
+        <div>
+          <input
+            type="text"
+            id="title"
+            [(ngModel)]="currentNote.title"
+            name="title"
+            required
+          />
+        </div>
+        <label for="content">Contenu</label>
+        <div>
+          <textarea
+            type="text"
+            id="content"
+            [(ngModel)]="currentNote.content"
+            name="content"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" (click)="saveNote()">Créer la note</button>
+      </form>
+
+    </div>
+    <div *ngIf="submitted">
+        <button class="btn btn-success" (click)="newNote()">Créer une autre note</button>
+    </div>
+  </div>
+<p>Etat de la publication de la note : <strong>{{ submitted }}</strong></p>
+  

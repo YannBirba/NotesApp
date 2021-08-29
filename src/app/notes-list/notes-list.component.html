@@ -1,0 +1,30 @@
+<h1>Liste de notes</h1>
+<hr>
+
+
+<div class="search-container">
+  <section class="search">
+    <button routerLink="/add-note">Ajouter une note</button>
+    <input type="submit" (ngModelChange)="retrieveResults()" name="searchInput" [(ngModel)]="searchInput" type="search"
+      placeholder="Chercher une note ...">
+  </section>
+  <div class="results">
+    <ul *ngIf="searchInput">
+      <li *ngFor="let result of     
+  results">
+        {{result.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+
+
+
+<div class="notes">
+  <div class="note" *ngFor="let note of notes" style="cursor: default;" id="note-id-{{note.id}}">
+    <h3 style="cursor: pointer;" routerLink="/note/{{note.id}}">{{note.title}}</h3>
+    <p>{{note.content}}</p>
+  </div>
+</div>
