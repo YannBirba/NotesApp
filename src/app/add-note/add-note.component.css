@@ -1,0 +1,54 @@
+h4 {
+  text-align: center;
+  font-weight: 700;
+  margin: 25px 0;
+  font-size: 25px;
+}
+
+form {
+  outline: 2px solid grey;
+  max-width: 250px;
+  margin: auto;
+  padding: 2.5% 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 7px;
+}
+
+form textarea {
+  min-height: 150px;
+  font-family: 'Raleway',sans-serif;
+}
+
+form textarea,
+form input {
+  width: 100%;
+}
+
+form label {
+  color: cadetblue;
+  font-weight: 700;
+}
+
+p {
+  text-align: center;
+  margin-top: 25px;
+  font-style: italic;
+}
+
+p strong {
+  font-weight: 700;
+  color: cadetblue;
+}
+/*# sourceMappingURL=add-note.component.css.map */

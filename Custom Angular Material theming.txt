@@ -1,0 +1,65 @@
+Primary color : #f16f40
+Secondary color : #24347c
+ Baseline background color: #FFFFFF
+2. Baseline surface color: #FFFFFF
+3. Baseline error color: #BC3424
+
+https://material.io/resources/color/#!/?view.left=1&view.right=0&primary.color=f16f40&secondary.color=24347c&primary.text.color=000000&secondary.text.color=ffffff
+
+@use '~@angular/material' as mat;
+@include mat-core();
+
+$my-primary : mat-palette(#f16f40,400);
+$my-accent : mat-palette(#24347c,400);
+$my-warn : mat-palette(#BC3424,400);
+
+$my-theme : mat-light-theme($my-primary, $my-accent, $my-warn);
+
+@include angular-material-theme($my-theme)
+
+
+
+
+@use '~@angular/material' as mat;
+
+@include mat.core();
+
+// Define a light theme
+$light-primary: mat.define-palette(mat.$indigo-palette);
+$light-accent: mat.define-palette(mat.$pink-palette);
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: $light-primary,
+   accent: $light-accent,
+ )
+));
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// Apply the light theme only when the `.my-light-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.my-light-theme {
+ @include mat.core-color($light-theme);
+ @include mat.button-color($light-theme);
+}
+
+
+http://mcg.mbitson.com/#!?mcgpalette0=%23dadeaa&themename=mcgtheme
+
+
+https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+
+
+https://github.com/angular/components/blob/master/guides/theming.md

@@ -1,26 +1,22 @@
 <div>
     <div *ngIf="!submitted">
       <h4>Nouvelle note</h4>
-      <form (ngSubmit)="onSubmit(f)" #newNoteForm="ngForm">
-        <label for="title">Titre</label>
+      <form (ngSubmit)="onSubmit(newNoteForm)" #newNoteForm="ngForm">
           <input
             type="text"
             id="title"
             [(ngModel)]="currentNote.title"
             name="title"
             required
-            placeholder="Entrer un titre pour la note"
-            (ngModelChange)="formValidation($event)" 
+            placeholder="Titre"
           />
-        <label for="content">Contenu</label>
           <textarea
             type="text"
             id="content"
             [(ngModel)]="currentNote.content"
             name="content"
             required
-            placeholder="Entrer un contenu pour la note"
-            (ngModelChange)="retrieveResults($event)" 
+            placeholder="Note"
           ></textarea>
         <button [disabled] = "newNoteForm.invalid" type="submit">Créer la note</button>
         <button routerLink="/notes">Retourner à la liste des notes</button>

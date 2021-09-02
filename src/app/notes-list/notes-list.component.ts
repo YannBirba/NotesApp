@@ -29,7 +29,7 @@ export class NotesListComponent implements OnInit {
       }
     );
   }
-  retrieveResults(input : any): void{
+  retrieveResults(input : string): void{
     this.results = [];
     this.searchInput = input;
     if (this.searchInput != null || this.searchInput != '') {
