@@ -25,14 +25,13 @@
 
 <div class="notes">
   <mat-card class="note" *ngFor="let note of notes" style="cursor: default;" id="note-id-{{note.id}}">
-    <mat-card-title class="title">{{note.title}}</mat-card-title>
+    <mat-card-title routerLink="/note/{{note.id}}" class="title">{{note.title}}</mat-card-title>
     <mat-card-content class="content">
       <p>{{ note.content }}</p>
     </mat-card-content>
-    <mat-divider inset></mat-divider>
-    <mat-card-actions>
-      <button mat-button routerLink="/note/{{note.id}}">Modifier</button>
-      <button mat-button (click)="deleteNote(note)">Supprimer</button>
+    <mat-card-actions class="buttons">
+      <button mat-mini-fab color="primary" routerLink="/note/{{note.id}}"><mat-icon>edit</mat-icon></button>
+      <button mat-mini-fab color="warn" (click)="deleteNote(note)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
     <mat-card-footer>
       <mat-progress-bar mode="determinate" value="100" color="primary"></mat-progress-bar>

@@ -25,6 +25,23 @@ h1 {
     }
     &>.title{
       min-height: 60px;
+      cursor: pointer;
+    }
+    &>.buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      opacity: 0;
+      transition: 0.5s ease;
+      position: absolute;
+      inset: 0;
+    }
+    &:hover{
+      &>.buttons{
+        opacity: 1;
+        transition: 0.5s ease;
+      }
     }
 
     h3 {

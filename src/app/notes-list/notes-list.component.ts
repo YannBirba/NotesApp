@@ -52,18 +52,16 @@ export class NotesListComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.id = "confirm-dialog-component";
-    dialogConfig.height = "300px";
+    dialogConfig.height = "200px";
     dialogConfig.width = "300px";
     dialogConfig.data = {
-      name: "Surpression de : "+ currentNote.title,
-      title: "Etes vous sûr de vouloir supprimer cette note ?",
-      description: "Si vous continuer la note " + currentNote.id +  " - " + currentNote.title + " va être supprimée",
+      name: "Suppression d'une note",
+      title: "Suppression d'une note",
+      description: "Si vous continuer la note : \"" + currentNote.title + "\" va être supprimée",
       actionButtonText: "Supprimer",
       Note: currentNote
     }
     const modalDialog = this.matDialog.open(ConfirmDialogComponent, dialogConfig);
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate(['/notes']);
+
   }
 }
