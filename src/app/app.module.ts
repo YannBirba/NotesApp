@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { TruncatePipe } from './Pipes/truncate.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     NotFoundComponent,
     AddNoteComponent,
     ConfirmDialogComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

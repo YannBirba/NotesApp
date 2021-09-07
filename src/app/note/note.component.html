@@ -1,18 +1,29 @@
-<div>
-  <div *ngIf="currentNote.title">
-    <h4>Note {{currentNote.id}}</h4>
+<div class="ctn">
+<mat-card class="note--card">
+<div style="width: 100%;">
+  <div style="width: 100%;" *ngIf="currentNote.id">
+    <mat-card-title class="title">Note {{currentNote.id}}</mat-card-title>
     <form>
-      <input type="text" id="title" [(ngModel)]="currentNote.title" name="title"/>
-      <textarea type="text" id="content" [(ngModel)]="currentNote.content" name="content"></textarea>
-      <div>
-        <button (click)="deleteNote()">Supprimer</button>
-        <button type="submit" (click)="updateNote()">Enregister</button></div>
-      <button routerLink="/notes">Retourner à la liste des notes</button>
+      <mat-form-field class="title--input">
+        <input placeholder="Titre" matInput id="title" [(ngModel)]="currentNote.title" name="title">
+      </mat-form-field>
+      <mat-form-field class="content--input">
+        <textarea placeholder="Texte" matInput type="text" id="content" [(ngModel)]="currentNote.content" name="content"></textarea>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-mini-fab color="warn" (click)="deleteNote()"><mat-icon>delete</mat-icon></button>
+        <button mat-mini-fab color="primary" type="submit" (click)="updateNote()"><mat-icon>save</mat-icon></button></div>
+      <button mat-raised-button routerLink="/notes">Liste des notes</button>
     </form>
 
   </div>
-  <div *ngIf="!currentNote.title ">
-    <p>Cette note est inaccessible ...</p>
+  <div *ngIf="!currentNote.id ">
+    <mat-progress-spinner
+    class="example-margin"
+    color="primary"
+    mode="indeterminate">
+</mat-progress-spinner>
   </div>
 </div>
-<p><strong>{{ message }}</strong></p>
+</mat-card>
+</div>

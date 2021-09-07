@@ -1,21 +1,29 @@
-h4 {
+.note--card{
+  min-width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 2.5%;
+  .title{
     text-align: center;
-    font-weight: 700;
     margin: 25px 0;
-    font-size: 25px;
   }
-  
   form {
-    outline: 2px solid grey;
-    max-width: 250px;
     margin: auto;
-    padding: 2.5% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 7px;
-  
+    width: 100%;
+    .title--input,.content--input{
+      width: 100%;
+    }
+    .title--input input{
+      border: none;
+    }
     textarea {
       min-height: 150px;
       font-family: 'Raleway',sans-serif;
@@ -25,18 +33,28 @@ h4 {
     input {
       width: 100%;
     }
-  
-    label {
-      color: cadetblue;
-      font-weight: 700;
+    .buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
     }
   }
-p{
-    text-align: center;
-    margin-top: 25px;
-    font-style: italic;
-    strong{
-        font-weight: 700;
-        color: cadetblue;
+}
+.ctn{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width:850px) {
+  .note--card{
+    min-width: 300px;
+    .title--input,.content--input{
+      width: 90%;
     }
+  }
 }

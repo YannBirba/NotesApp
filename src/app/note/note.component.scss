@@ -1,33 +1,60 @@
-h4 {
-  text-align: center;
-  font-weight: 700;
-  margin: 25px 0;
-  font-size: 25px;
-}
-
-form {
-  outline: 2px solid grey;
-  max-width: 250px;
-  margin: auto;
-  padding: 2.5% 5%;
+.note--card{
+  min-width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 7px;
-
-  textarea {
-    min-height: 150px;
-    font-family: 'Raleway',sans-serif;
+  margin: auto;
+  padding: 2.5%;
+  .title{
+    text-align: center;
+    margin: 25px 0;
   }
-
-  textarea,
-  input {
+  form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
     width: 100%;
+    .title--input,.content--input{
+      width: 100%;
+    }
+    .title--input input{
+      border: none;
+    }
+    textarea {
+      min-height: 150px;
+      font-family: 'Raleway',sans-serif;
+    }
+  
+    textarea,
+    input {
+      width: 100%;
+    }
+    .buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
   }
-
-  label {
-    color: cadetblue;
-    font-weight: 700;
+}
+.ctn{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width:850px) {
+  .note--card{
+    min-width: 300px;
+    .title--input,.content--input{
+      width: 90%;
+    }
   }
 }

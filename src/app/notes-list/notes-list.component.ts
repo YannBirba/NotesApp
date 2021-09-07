@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { TruncatePipe } from '../Pipes/truncate.pipe';
 
 @Component({
   selector: 'app-notes-list',
@@ -62,6 +63,5 @@ export class NotesListComponent implements OnInit {
       Note: currentNote
     }
     const modalDialog = this.matDialog.open(ConfirmDialogComponent, dialogConfig);
-
   }
 }

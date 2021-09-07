@@ -1,31 +1,21 @@
-<div>
-    <div *ngIf="!submitted">
-      <h4>Nouvelle note</h4>
+<div class="ctn">
+  <mat-card class="note--card">
+  <div style="width: 100%;">
+    <div style="width: 100%;">
+      <mat-card-title class="title">Nouvelle note</mat-card-title>
       <form (ngSubmit)="onSubmit(newNoteForm)" #newNoteForm="ngForm">
-          <input
-            type="text"
-            id="title"
-            [(ngModel)]="currentNote.title"
-            name="title"
-            required
-            placeholder="Titre"
-          />
-          <textarea
-            type="text"
-            id="content"
-            [(ngModel)]="currentNote.content"
-            name="content"
-            required
-            placeholder="Note"
-          ></textarea>
-        <button [disabled] = "newNoteForm.invalid" type="submit">Créer la note</button>
-        <button routerLink="/notes">Retourner à la liste des notes</button>
+        <mat-form-field class="title--input">
+          <input placeholder="Titre" matInput id="title" [(ngModel)]="currentNote.title" name="title">
+        </mat-form-field>
+        <mat-form-field class="content--input">
+          <textarea placeholder="Texte" matInput type="text" id="content" [(ngModel)]="currentNote.content" name="content"></textarea>
+        </mat-form-field>
+        <div class="buttons">
+          <button mat-mini-fab color="primary" [disabled] = "newNoteForm.invalid" type="submit"><mat-icon>save</mat-icon></button></div>
+        <button mat-raised-button routerLink="/notes">Liste des notes</button>
       </form>
-
-    </div>
-    <div *ngIf="submitted">
-        <button class="btn btn-success" (click)="newNote()">Créer une autre note</button>
     </div>
   </div>
-<p>Etat de la publication de la note : <strong>{{ submitted }}</strong></p>
+  </mat-card>
+  </div>
   
