@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from '../models/note';
 import { NotesService } from '../Services/notes.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig  } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -42,7 +42,11 @@ export class NoteComponent implements OnInit {
          });
         
    }
-
+   EnterSubmit(event: any, form: NgForm) {
+    if (event.keyCode === 13) {
+      this.updateNote();
+    }
+   }
    updateNote(): void {
 
      this.notesService.update(this.currentNote.id, this.currentNote)

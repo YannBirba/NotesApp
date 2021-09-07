@@ -3,16 +3,16 @@
 <div style="width: 100%;">
   <div style="width: 100%;" *ngIf="currentNote.id">
     <mat-card-title class="title">Note {{currentNote.id}}</mat-card-title>
-    <form>
+    <form #updateNoteForm="ngForm" (keydown)="EnterSubmit($event, updateNoteForm)">
       <mat-form-field class="title--input">
-        <input placeholder="Titre" matInput id="title" [(ngModel)]="currentNote.title" name="title">
+        <input required placeholder="Titre" matInput id="title" [(ngModel)]="currentNote.title" name="title">
       </mat-form-field>
       <mat-form-field class="content--input">
-        <textarea placeholder="Texte" matInput type="text" id="content" [(ngModel)]="currentNote.content" name="content"></textarea>
+        <textarea required placeholder="Texte" matInput type="text" id="content" [(ngModel)]="currentNote.content" name="content"></textarea>
       </mat-form-field>
       <div class="buttons">
         <button mat-mini-fab color="warn" (click)="deleteNote()"><mat-icon>delete</mat-icon></button>
-        <button mat-mini-fab color="primary" type="submit" (click)="updateNote()"><mat-icon>save</mat-icon></button></div>
+        <button mat-mini-fab color="primary" type="submit" (click)="updateNote()" [disabled] = "updateNoteForm.invalid"><mat-icon>save</mat-icon></button></div>
       <button mat-raised-button routerLink="/notes">Liste des notes</button>
     </form>
 

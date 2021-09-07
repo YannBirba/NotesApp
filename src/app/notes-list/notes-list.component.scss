@@ -30,6 +30,9 @@ h1 {
       font-size: 22px;
       display: flex;
       align-items: center;
+      &:hover,&:active{
+        color: #3f51b5;
+      }
     }
     &>.buttons{
       display: flex;
@@ -39,7 +42,14 @@ h1 {
       opacity: 0;
       transition: 0.5s ease;
       position: absolute;
-      inset: 0;
+      top: 75px;
+      left: 8px;
+      right: 8px;
+      bottom: -15px;
+
+      &>button{
+        margin-bottom: 25px;
+      }
     }
     &:hover,&:active{
       box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.25);

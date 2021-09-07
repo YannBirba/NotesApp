@@ -47,6 +47,11 @@ export class AddNoteComponent {
           );
         });
    }
+  EnterSubmit(event: any, form: NgForm) {
+    if (event.keyCode === 13) {
+      this.onSubmit(form);
+    }
+   }
    openNotif(message: string, action: string, durationTime: number) {
     this.notif.open(message, action, {
       duration: durationTime,
