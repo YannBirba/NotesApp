@@ -53,7 +53,7 @@ export class NotesListComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.id = "confirm-dialog-component";
     dialogConfig.height = "200px";
-    dialogConfig.width = "300px";
+    dialogConfig.width = "350px";
     dialogConfig.data = {
       name: "Suppression d'une note",
       title: "Suppression d'une note",

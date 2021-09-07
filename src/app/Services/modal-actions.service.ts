@@ -34,4 +34,11 @@ export class ModalActionsService {
       // this.router.onSameUrlNavigation = 'reload';
       // this.router.navigate(['/notes']);
   }
+  openNotif(message: string, action: string, durationTime: number) {
+    this.notifConnexion.open(message, action, {
+      duration: durationTime,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+    });
+  }
 }
