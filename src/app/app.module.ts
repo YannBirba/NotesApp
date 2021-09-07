@@ -13,6 +13,8 @@ import { AddNoteComponent } from './add-note/add-note.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { AngularMaterialModule } from './angular-material.module';
     LoginComponent,
     NotFoundComponent,
     AddNoteComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

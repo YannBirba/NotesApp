@@ -1,33 +1,45 @@
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-raised-button color="warn">Warn</button>
-
 <h1>Liste de notes</h1>
-<hr>
-
 
 <div class="search-container">
-  <section class="search">
-    <button routerLink="/add-note">Ajouter une note</button>
-    <input type="submit" (ngModelChange)="retrieveResults($event)" name="searchInput" [(ngModel)]="searchInput" type="search"
-      placeholder="Chercher une note ...">
+  <form>
+    <section class="search">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Rechercher</mat-label>
+      <input 
+      (ngModelChange)="retrieveResults($event)"name="searchInput" [(ngModel)]="searchInput"
+             placeholder="Chercher par titre"
+             aria-label="Rechercher"
+             matInput
+             [formControl]="SearchForm"
+             [matAutocomplete]="auto">
+             <mat-icon matSuffix>search</mat-icon>
+      <mat-autocomplete class="results" #auto="matAutocomplete">
+        <mat-option *ngFor="let result of results" [value]="result" routerLink="/note/{{result.id}}">
+          {{result.title}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
   </section>
-  <div class="results" *ngIf="searchInput && results.length > 0 ">
-    <ul>
-      <li *ngFor="let result of results" style="cursor: pointer;" routerLink="/note/{{result.id}}">
-        {{result.title}}
-      </li>
-    </ul>
-  </div>
+  </form>
 </div>
-<hr>
-
-
-
 
 <div class="notes">
-  <div class="note" *ngFor="let note of notes" style="cursor: default;" id="note-id-{{note.id}}">
-    <h3 style="cursor: pointer;" routerLink="/note/{{note.id}}">{{note.title}}</h3>
-    <p>{{note.content}}</p>
-  </div>
+  <mat-card class="note" *ngFor="let note of notes" style="cursor: default;" id="note-id-{{note.id}}">
+    <mat-card-title class="title">{{note.title}}</mat-card-title>
+    <mat-card-content class="content">
+      <p>{{ note.content }}</p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button routerLink="/note/{{note.id}}">Modifier</button>
+      <button mat-button (click)="deleteNote(note)">Supprimer</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="determinate" value="100" color="primary"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
 </div>
+
+<button class="add--button" mat-fab color="primary" routerLink="/add-note">
+  <mat-icon>add</mat-icon>
+</button>

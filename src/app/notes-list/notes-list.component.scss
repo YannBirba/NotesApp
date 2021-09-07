@@ -12,15 +12,20 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 25px;
+  gap: 40px;
   flex-wrap: wrap;
 
   &>.note {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    flex: 0 0 200px;
-    word-break: break-all;
+    flex: 0 0 250px;
+    &>.content{
+      min-height: 150px;
+    }
+    &>.title{
+      min-height: 60px;
+    }
 
     h3 {
       font-size: 18px;
@@ -44,32 +49,18 @@ h1 {
 
   .search {
     margin: auto;
-  }
 
-  .results {
-    position: absolute;
-    top: 29px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-height: 500px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background: #fff;
-    outline: 2px solid grey;
-    scrollbar-width: thin;
-    min-width: 341px;
-    ul {
-      li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-        font-weight: 700;
-
-        &:hover {
-          color: cadetblue;
-        }
-      }
-    }
   }
+  .search > *{
+    margin: 0 10px;
+  }
+}
+.add--button{
+  position: fixed;
+  z-index: 10;
+  bottom: 25px;
+  right: 25px;
+}
+.full-width{
+  width: 350px;
 }
