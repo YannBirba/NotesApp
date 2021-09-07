@@ -7,13 +7,14 @@ h1 {
 }
 
 .notes {
-  margin: 50px 0;
+  margin: 50px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
+  max-width: 1750px;
 
   &>.note {
     display: flex;
@@ -86,6 +87,7 @@ h1 {
   width: 350px;
 }
 .waitingSpinner{
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
