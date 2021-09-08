@@ -18,6 +18,7 @@ export class NotesListComponent implements OnInit {
   public searchInput: string = '';
   changeCount: number = 0;
   SearchForm = new FormControl();
+  showDelay = new FormControl(1000);
   constructor(private notesService: NotesService, private router: Router,public matDialog: MatDialog) {}
 
   ngOnInit(): void {

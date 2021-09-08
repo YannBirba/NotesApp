@@ -2,7 +2,7 @@
   <mat-card class="note--card">
   <div style="width: 100%;">
     <div style="width: 100%;">
-      <mat-card-title class="title">Nouvelle note</mat-card-title>
+      <h1 class="title">Nouvelle note</h1>
       <form (ngSubmit)="onSubmit(newNoteForm)" #newNoteForm="ngForm" (keydown)="EnterSubmit($event, newNoteForm)">
         <mat-form-field class="title--input">
           <input required placeholder="Titre" matInput id="title" [(ngModel)]="currentNote.title" name="title">
